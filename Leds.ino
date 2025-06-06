@@ -1,19 +1,19 @@
 #include <FastLED.h>
-#define NUM_LEDS 1
+#define ST_LEDIC 1
 #define DATA_PIN 6
 #define BRIGHTNESS 5
 
-CRGB leds[NUM_LEDS];
+CRGB trak[ST_LEDIC];
 
    void setup() { 
-       FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS);
+       FastLED.addLeds<NEOPIXEL, DATA_PIN>(trak, ST_LEDIC);
    }
 
     void loop() {
-        for(int dot = 0; dot < NUM_LEDS; dot++) { 
-            leds[dot] = CRGB::White;
+        for(int lucka = 0; lucka < ST_LEDIC; lucka++) { 
+            trak[lucka] = CRGB::White;
             FastLED.show();
-            leds[dot] = CRGB::Black;
+            trak[lucka] = CRGB::Black;
             delay(30);
         }
     }
