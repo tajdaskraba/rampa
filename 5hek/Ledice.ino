@@ -1,7 +1,6 @@
 #include <FastLED.h>
-#define ST_LEDIC 1
+#define ST_LEDIC 144
 #define DATA_PIN 6
-#define BRIGHTNESS 5
 
 CRGB trak[ST_LEDIC];
 
