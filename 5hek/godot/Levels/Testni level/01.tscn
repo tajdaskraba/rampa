@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://npfmh1rj1h5"]
+[gd_scene load_steps=8 format=4 uid="uid://npfmh1rj1h5"]
 
 [ext_resource type="PackedScene" uid="uid://y3xwulb6fn7g" path="res://Tile Maps/grass-01.tscn" id="1_ovgw8"]
 [ext_resource type="PackedScene" uid="uid://d3tuxftklujnu" path="res://Levels/player_spawn.tscn" id="2_p3lla"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://bydaukun38a6m" path="res://Items/gem.tres" id="4_1f25l"]
 [ext_resource type="Resource" uid="uid://cpimc1u78r0rr" path="res://Items/potion.tres" id="5_n0wcj"]
 [ext_resource type="Resource" uid="uid://cclgfg7pojlv7" path="res://Items/stone.tres" id="6_ejj5i"]
+[ext_resource type="PackedScene" uid="uid://b5s7ht74neg8v" path="res://Plants/Scenes/growing_flower.tscn" id="7_1f25l"]
 
 [node name="01" type="Node2D"]
 
@@ -57,3 +58,6 @@ item_data = ExtResource("4_1f25l")
 [node name="ItemPickup10" parent="." instance=ExtResource("3_u6qi1")]
 position = Vector2(466, -47)
 item_data = ExtResource("6_ejj5i")
+
+[node name="GrowingFlower" parent="." instance=ExtResource("7_1f25l")]
+position = Vector2(103, -53)

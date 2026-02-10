@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5s7ht74neg8v"]
+
+[ext_resource type="Texture2D" uid="uid://dwliy65ocj8uj" path="res://Plants/Sprites/Plants.png" id="1_sn0s4"]
+[ext_resource type="Script" uid="uid://do7wqfx6gdahy" path="res://Plants/Scripts/growing_flower.gd" id="1_yagoi"]
+
+[sub_resource type="Animation" id="Animation_yagoi"]
+resource_name = "grow"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 2.0333333, 3.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_5gcdp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_exv5q"]
+_data = {
+&"RESET": SubResource("Animation_5gcdp"),
+&"grow": SubResource("Animation_yagoi")
+}
+
+[node name="GrowingFlower" type="Node2D"]
+script = ExtResource("1_yagoi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_exv5q")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sn0s4")
+hframes = 4
+
+[node name="GrowthTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
