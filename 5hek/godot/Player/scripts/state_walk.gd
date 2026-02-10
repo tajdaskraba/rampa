@@ -4,10 +4,10 @@ class_name State_Walk extends State
 @onready var idle: State = $"../Idle"
 @onready var walk: State = $"../Walk"
 
-# What happens when the player enters this state? 
+# What happens when the player enters this state?
 func Enter() -> void:
 	player.UpdateAnimation("walk")
-	pass 
+	pass
 
 # What happens when the player exits this state?
 func Exit() -> void:

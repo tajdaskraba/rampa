@@ -6,7 +6,7 @@ var direction : Vector2 = Vector2.ZERO
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D
-@onready var state_machine : PlayerStateMachine = $StateMachine
+@onready var state_machine: PlayerStateMachine = $StateMachine
 
 func _ready():
 	state_machine.Initialize(self)
@@ -14,8 +14,13 @@ func _ready():
 
 func _process(_delta: float) -> void:
 	
-	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
-	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+	#direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
+	#direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+	
+	direction = Vector2(
+		Input.get_axis("left", "right"),
+		Input.get_axis("up", "down")
+	).normalized()
 	pass
 
 func _physics_process ( _delta ):

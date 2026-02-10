@@ -42,10 +42,10 @@ func Initialize( _player: Player ) -> void:
 func ChangeState( new_state: State ) -> void:
 	if new_state == null || new_state == current_state:
 		return
-		
+	
 	if current_state:
 		current_state.Exit()
-		
+	
 	prev_state = current_state
 	current_state = new_state
 	current_state.Enter()
